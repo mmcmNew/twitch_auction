@@ -1,0 +1,93 @@
+:root {
+  font-family: Inter, system-ui, sans-serif;
+  color: #ebefff;
+  background: #0b1020;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: #0b1020; }
+.app-shell { min-height: 100vh; }
+header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #253157;
+  position: sticky;
+  top: 0;
+  background: rgba(11, 16, 32, 0.95);
+}
+.brand { color: #fff; font-weight: 700; text-decoration: none; }
+nav { display: flex; gap: 0.75rem; }
+nav a { color: #9db0ff; text-decoration: none; }
+nav a.active { color: #fff; }
+main { padding: 1rem; }
+.workspace { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+.workspace.compact iframe { display: none; }
+.controls { display: grid; gap: 0.75rem; grid-template-columns: 1fr; }
+.field { display: grid; gap: 0.35rem; font-size: 0.9rem; }
+input, select {
+  width: 100%;
+  padding: 0.55rem;
+  border-radius: 0.6rem;
+  border: 1px solid #2f3d69;
+  background: #141c33;
+  color: #fff;
+}
+.card {
+  background: #131b31;
+  border: 1px solid #2f3d69;
+  border-radius: 0.8rem;
+  padding: 0.85rem;
+}
+ul { margin: 0; padding-left: 1rem; display: grid; gap: 0.35rem; }
+.badges { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+.badges span {
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  background: #2a3357;
+  border: 1px solid #4a578f;
+  font-size: 0.78rem;
+}
+iframe { width: 100%; min-height: 360px; border: none; border-radius: 0.7rem; }
+
+@media (min-width: 960px) {
+  .workspace {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+  .controls, .workspace > .card:first-of-type {
+    grid-column: 1 / -1;
+  }
+  .controls { grid-template-columns: 1fr 1fr; }
+}
+
+.mock-banner {
+  border-color: #7557d8;
+  background: #1a1333;
+}
+
+
+button {
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.6rem;
+  border: 1px solid #4e61a3;
+  background: #1d2950;
+  color: #fff;
+  cursor: pointer;
+}
+button:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+.status-ok { color: #7ee787; }
+.status-error { color: #ff7b72; }
+.status-payload {
+  margin: 0;
+  padding: 0.6rem;
+  border-radius: 0.6rem;
+  background: #0e152a;
+  border: 1px solid #2f3d69;
+  overflow: auto;
+}
